@@ -20,15 +20,16 @@ function calculateWinner(playerOneWord, playerTwoWord){
     let playerTwo = wordScore(playerTwoWord.toLowerCase())
 
     // player one wins or player two wins
+    let scoreText = `${playerOneWord} ${playerOne} - ${playerTwoWord} ${playerTwo}`
     if (playerOne === playerTwo) {
-        console.log(`Draw: ${playerOneWord} ${playerOne} - ${playerTwoWord} ${playerTwo}`)
+        console.log(`Draw: ${scoreText}`)
     } else if (playerOne > playerTwo) {
-        console.log(`Player 1 wins: ${playerOneWord} ${playerOne} - ${playerTwoWord} ${playerTwo}`)
+        console.log(`Player 1 wins: ${scoreText}`)
     } else if (playerOne < playerTwo) {
-        console.log(`Player 2 wins: ${playerOneWord} ${playerOne} - ${playerTwoWord} ${playerTwo}`)
+        console.log(`Player 2 wins: ${scoreText}`)
     } else {
         console.log("Enter correct data type")
     }
 }
 
-calculateWinner( 'COMPUTER', 'HELLOWORLD' );
+calculateWinner( 'COMPUTER', 'HELLOWORLD');
