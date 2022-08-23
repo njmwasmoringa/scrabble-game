@@ -9,8 +9,12 @@ function wordScore(word) {
     for (let x=0; x<word.length; x++) {
         // position of each letter in the alphabet
         let xAlphabetPosition = alphabet.indexOf(word[x])
-        // add points value of letter to total word score
-        total += points[xAlphabetPosition]
+        if (xAlphabetPosition === -1) {
+            total += 0
+        } else {
+            // add points value of letter to total word score
+            total += points[xAlphabetPosition]
+        }
     }
     return total
 }
@@ -27,8 +31,8 @@ function calculateWinner(playerOneWord, playerTwoWord){
     } else if (playerOne < playerTwo) {
         console.log(`Player 2 wins: ${scoreText}`)
     } else {
-        console.log("Enter correct data type")
+        console.log(`Enter correct data type ${scoreText}`)
     }
 }
 
-calculateWinner( 'COMPUTER', 'HELLOWORLD');
+calculateWinner( 'COMPUTER', 'HELLOWORLD!');
